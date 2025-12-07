@@ -85,3 +85,10 @@ host="serveur" pour Docker Compose
 host="host.docker.internal" pour Docker sans Compose
 
 Tous les clients partagent la même liste de tâches sur le serveur.
+# Workflow Git du projet
+
+- Création des branches : main, dev, feature/serveur, feature/client, feature/docker
+- Développement isolé sur les branches feature/*
+- Pull Requests ouvertes vers dev
+- Fusion de dev vers main
+- Tag v1.0.0 pour version stable
