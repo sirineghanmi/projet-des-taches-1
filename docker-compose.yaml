@@ -1,0 +1,38 @@
+services:
+  serveur:
+    build:
+      context: .
+      dockerfile: Dockerfile.serveur
+    container_name: serveur
+    ports:
+      - "5000:5000"
+
+  client1:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client1
+    depends_on:
+      - serveur
+    stdin_open: true
+    tty: true
+
+  client2:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client2
+    depends_on:
+      - serveur
+    stdin_open: true
+    tty: true
+
+  client3:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client3
+    depends_on:
+      - serveur
+    stdin_open: true
+    tty: true
